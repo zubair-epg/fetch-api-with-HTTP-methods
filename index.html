@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Form
+    </title>
+    <style>
+       
+.container{
+margin: 40px;
+}
+.form{
+    margin: 0 auto;
+    width: 40%;
+    border: 1px solid green;
+    text-align: center;
+}
+input[type=text] {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 16px;
+    margin: 8px 0;
+    border: none;
+    /* border-radius: 0px 9px 9px 0px; */
+    cursor: pointer;
+  }
+  .checklist{
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: space-around; */
+    padding: 20px;
+  }
+  .delet-btn{
+    background-color: #ff0505;
+    color: white;
+    padding: 4px 3px;
+    margin: 8px 0;
+    border: none;
+    /* border-radius: 0px 9px 9px 0px; */
+    cursor: pointer;
+  }
+  p{
+    margin: 0;
+  }
+    </style>
+</head>
+<body>
+
+
+    <div class='container'>
+        <div class="form">
+            <h2>Todo App</h2>
+            <form action="#">
+                <input type="text" name="" placeholder='Enter Todo Task' id="textField" />
+                 <button type="submit" onclick="addTodo()">Add</button>
+            </form>
+            <div class="checklist" id="checkList">
+              
+                <input type="checkbox" name="" id="checkBox" /> <p style="display: inline-block;">today task</p>
+        
+             <button class="delet-btn">Delete</button>
+            </div>
+        </div>
+      </div>
+
+    
+    <script>
+        var checkList = document.getElementById('checkList')
+    function addTodo(){
+     let inputVal =  document.getElementById("textField").value
+         console.log(inputVal)
+      var li = document.createElement("li")
+      var textNode  = li.createTextNode(inputVal) 
+      li.appendChild(textNode)
+
+      checkList.appendChild(li)
+      console.log(checkList)
+
+
+      var deletBtn = document.createElement("button")
+
+
+    }
+    </script>
+</body>
+</html>
